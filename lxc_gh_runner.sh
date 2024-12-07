@@ -82,6 +82,9 @@ pct exec "$PCTID" -- bash -c "apt update -y && apt install -y git curl zip \
 liblttng-ust1 libkrb5-3 zlib1g libicu-dev libssl-dev \
 && passwd -d root"
 
+# change working directory to /root
+pct exec "$PCTID" -- bash -c "cd /root"
+
 # Get runner installation token
 log "-- Getting runner installation token"
 RES=$(curl -q -L \
